@@ -1,0 +1,15 @@
+{
+  "name": "familiarity",
+  "private": true,
+  "version": "0.0.0",
+  "description": "Visual prototype for a future Claude and Codex plugin.",
+  "type": "module",
+  "scripts": {
+    "dev": "python3 -m http.server 8766 --bind 127.0.0.1 --directory prototype",
+    "test": "node --test prototype/*.test.mjs",
+    "lint": "eslint prototype eslint.config.mjs"
+  },
+  "devDependencies": {
+    "eslint": "10.8.1"
+  }
+}
