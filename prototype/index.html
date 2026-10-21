@@ -1,0 +1,105 @@
+<!doctype html>
+<html lang="pt-BR">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width,initial-scale=1" />
+    <title>Familiarity · Protótipo</title>
+    <link rel="stylesheet" href="base.css" />
+    <link rel="stylesheet" href="reader.css" />
+    <link rel="stylesheet" href="graph.css" />
+  </head>
+  <body class="graph-page">
+    <a class="skip" href="#map">Ir para o mapa</a>
+    <header class="topbar">
+      <a class="brand" href="./" aria-label="Familiarity, protótipo inicial"
+        ><svg width="25" height="25" viewBox="0 0 28 28" aria-hidden="true">
+          <path d="M5 23V5h18M5 14h13" />
+          <circle cx="5" cy="5" r="2.5" />
+          <circle cx="18" cy="14" r="2.5" />
+          <circle cx="5" cy="23" r="2.5" /></svg
+        >familiarity<span class="prototype">Claude · Codex</span></a
+      ><span class="local-indicator"
+        ><span></span> Exemplo fictício · sem agente conectado</span
+      >
+    </header>
+    <main>
+      <div class="workspace">
+        <section class="map-panel" aria-label="Mapa de uma exportação fictícia">
+          <div class="map-toolbar">
+            <nav id="breadcrumbs" aria-label="Recorte"></nav>
+            <div class="view-switch" aria-label="Estado do desenho">
+              <button data-mode="today">Hoje</button
+              ><button data-mode="proposed">Em estudo</button>
+            </div>
+          </div>
+          <div class="map-intro">
+            <h2 id="map-title">Mapa da questão</h2>
+            <p id="map-subtitle"></p>
+          </div>
+          <div class="map" id="map" tabindex="-1"></div>
+
+          <div class="map-bottom">
+            <span id="map-legend"
+              ><span class="legend-square"></span>Código
+              <span class="legend-diamond"></span>Conceito
+              <span class="legend-triangle"></span>Terceiro</span
+            ><button id="focus-button" class="quiet">Abrir preparação</button>
+          </div>
+          <div class="decision-strip" id="decision-strip" hidden></div>
+        </section>
+        <aside class="conversation" aria-label="Exploração guiada">
+          <details class="graph-index" open>
+            <summary>Nesta investigação</summary>
+            <nav id="branch-index" aria-label="Pontos da investigação"></nav>
+          </details>
+          <div class="conversation-top">
+            <span class="companion-mark" aria-hidden="true"></span
+            ><span id="conversation-context">Pedido de exportação</span>
+          </div>
+          <div id="conversation-body"></div>
+          <details class="walkthrough">
+            <summary>Percorrer o fluxo atual</summary>
+            <div class="trace-control" id="trace-control"></div>
+          </details>
+        </aside>
+      </div>
+      <dialog id="detail-dialog" aria-labelledby="detail-title">
+        <header class="detail-header">
+          <div>
+            <p class="eyebrow" id="detail-context"></p>
+            <h2 id="detail-title"></h2>
+          </div>
+          <button class="secondary" id="close-detail" autofocus>
+            Voltar ao mapa
+          </button>
+        </header>
+        <nav class="detail-nav" aria-label="Conteúdo da etapa">
+          <a href="#detail-body">Conceitos e fluxo</a
+          ><a href="#resources">Arquivos e ferramentas ↓</a>
+        </nav>
+        <div class="detail-body" id="detail-body"></div>
+        <section
+          class="resources"
+          id="resources"
+          aria-labelledby="resources-title"
+          tabindex="-1"
+        ></section>
+      </dialog>
+      <footer class="footer">
+        <details>
+          <summary>Exemplo fictício · limites do protótipo</summary>
+          <p>
+            Esta interface explora uma exportação de relatórios inventada para
+            demonstrar o Familiarity. Os arquivos e trechos são exemplos
+            didáticos escritos para este protótipo. Não foram extraídos de um
+            projeto. O futuro plugin atenderá Claude e Codex; a interface ainda
+            não possui agente conectado nem analisa repositórios.
+          </p>
+        </details>
+        <button id="reset" class="quiet">Voltar ao início</button>
+      </footer>
+      <p class="sr-only" id="announcement" role="status" aria-live="polite"></p>
+    </main>
+    <script type="module" src="app.mjs"></script>
+  </body>
+</html>
